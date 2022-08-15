@@ -8,7 +8,7 @@ RUN sudo apt update ; apt install -y cargo rustc; apt-get clean
 
 RUN mamba install -c conda-forge -y ipympl mplcursors nltk nodejs pytest spacy tweepy xeus-python
 
-RUN pip install arpa git+https://github.com/UCSB-PSTAT/chronometry.git@63e7db207f132e12e4987b6de540202444376963 cython gensim ipdb jsonschema karel_robot linguistics mlconjug3 morfessor nlpcube praat-parselmouth PTable pytest-custom-report git+https://github.com/UCSB-PSTAT/slytherin.git@974b05755790929b318adb47384fb9babe710167 timeout-decorator tokenizers==0.11.6
+RUN pip install arpa git+https://github.com/UCSB-PSTAT/chronometry.git@63e7db207f132e12e4987b6de540202444376963 cython gensim ipdb jsonschema karel_robot linguistics mlconjug3 morfessor nlpcube praat-parselmouth PTable pytest-custom-report git+https://github.com/UCSB-PSTAT/slytherin.git@0f3821c956e3847bcbb2e1c943866ec12f2b859c timeout-decorator tokenizers==0.11.6
 
 RUN python -m spacy download en && \
     python -m spacy download en_core_web_md
