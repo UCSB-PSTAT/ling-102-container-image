@@ -1,9 +1,4 @@
-# Container image source for <course>
-Info here about where to find and run this image.
+# Container image source for ling-110
+This is based on the previous [ling-194](https://github.com/UCSB-PSTAT/ling-194-docker-image) and [ling-100](https://github.com/UCSB-PSTAT/ling-110-docker-image) images.
 
-# Template instructions (**DELETE THIS SECTION**)
-
-* Uncomment and add necessary libraries to Containerfile
-* mv Jenkinsfile.template to Jenkinsfile
-* Update image variable and add tests to Jenkinsfile
 
