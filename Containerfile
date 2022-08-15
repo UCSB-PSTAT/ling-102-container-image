@@ -4,7 +4,7 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-RUN mamba install -c conda-forge -y ipympl mplcursors nltk nodejs pytest spacy transformers tweepy xeus-python
+RUN mamba install -c conda-forge -y ipympl mplcursors nltk nodejs pytest rust spacy tweepy xeus-python
 
 RUN pip install arpa cython gensim ipdb jsonschema karel_robot linguistics mlconjug3 morfessor nlpcube praat-parselmouth PTable pytest-custom-report timeout-decorator
 
