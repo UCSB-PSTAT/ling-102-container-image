@@ -8,7 +8,7 @@ RUN sudo apt update ; apt install -y cargo rustc; apt-get clean
 
 RUN mamba install -c conda-forge -y ipympl mplcursors nltk nodejs pytest spacy tweepy xeus-python
 
-RUN pip install arpa cython gensim ipdb jsonschema karel_robot linguistics mlconjug3 morfessor nlpcube praat-parselmouth PTable pytest-custom-report timeout-decorator
+RUN pip install arpa cython gensim ipdb jsonschema karel_robot linguistics mlconjug3 morfessor nlpcube praat-parselmouth PTable pytest-custom-report timeout-decorator tokenizers==0.11.6
 
 RUN python -m spacy download en && \
     python -m spacy download en_core_web_md
