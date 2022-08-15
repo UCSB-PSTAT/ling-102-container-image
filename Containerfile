@@ -4,7 +4,7 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-RUN sudo apt update ; apt install -y rustc; apt-get clean
+RUN sudo apt update ; apt install -y cargo rustc; apt-get clean
 
 RUN mamba install -c conda-forge -y ipympl mplcursors nltk nodejs pytest spacy tweepy xeus-python
 
