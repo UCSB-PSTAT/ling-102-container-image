@@ -19,7 +19,7 @@ pipeline {
                 }
                 stage('Test') {
                     steps {
-                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import cython; import mlconjug3; import ipdb; from cube.api import Cube; import jsonschema; from karel_robot.run import *; import spacy; import ipympl; import parselmouth; import matplotlib.pyplot as plt; import numpy as np; import mplcursors; import pytest; import tweepy; import gensim ; import morfessor ; import arpa; import linguistics"'
+                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import cython; import mlconjug3; import ipdb; from cube.api import Cube; import jsonschema; from karel_robot.run import *; import spacy; import ipympl; import parselmouth; import matplotlib.pyplot as plt; import numpy as np; import mplcursors; import pytest; import tweepy; import gensim ; import morfessor ; import arpa; from linguistics.similarity import Sentence"'
                         sh 'podman run -d --name=$IMAGE_NAME --rm -p 8888:8888 localhost/$IMAGE_NAME start-notebook.sh --NotebookApp.token="jenkinstest"'
                         sh 'sleep 10 && curl -v http://localhost:8888/lab?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
                         sh 'curl -v http://localhost:8888/tree?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
