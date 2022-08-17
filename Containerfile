@@ -6,7 +6,7 @@ USER root
 
 RUN sudo apt update ; apt-get clean
 
-RUN pip install PTable pytest pandas beautifulsoup4 numpy gensim scikit-learn matplotlib nltk arpa morfessor
+RUN pip install PTable pytest beautifulsoup4 gensim scikit-learn nltk arpa morfessor
 
 # FIXME - Install unlreased deprecated dev version of karel-robot
 RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
