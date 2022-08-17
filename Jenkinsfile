@@ -4,7 +4,7 @@ pipeline {
         upstream(upstreamProjects: 'UCSB-PSTAT GitHub/jupyter-base/main', threshold: hudson.model.Result.SUCCESS)
     }
     environment {
-        IMAGE_NAME = 'ling-102-194'
+        IMAGE_NAME = 'ling-102'
     }
     stages {
         stage('Build Test Deploy') {
@@ -19,7 +19,7 @@ pipeline {
                 }
                 stage('Test') {
                     steps {
-                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import cython; import mlconjug3; import ipdb; from cube.api import Cube; import jsonschema; from karel_robot.run import *; import spacy; import ipympl; import parselmouth; import matplotlib.pyplot as plt; import numpy as np; import mplcursors; import pytest; import tweepy; import gensim ; import morfessor ; import arpa; from linguistics.similarity import Sentence; from linguistics import Document"'
+                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "from prettytable import PrettyTable; import pytest; import curses; import pandas; import requests; from bs4 import BeautifulSoup; import numpy; import gensim; import sklearn; import matplotlib; import nltk; import arpa; import morfessor"'
                         sh 'podman run -d --name=$IMAGE_NAME --rm -p 8888:8888 localhost/$IMAGE_NAME start-notebook.sh --NotebookApp.token="jenkinstest"'
                         sh 'sleep 10 && curl -v http://localhost:8888/lab?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
                         sh 'curl -v http://localhost:8888/tree?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
