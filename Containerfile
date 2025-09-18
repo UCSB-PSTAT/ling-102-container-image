@@ -9,4 +9,6 @@ RUN pip install PTable pytest beautifulsoup4 gensim scikit-learn nltk arpa morfe
 # FIXME - Install unlreased deprecated dev version of karel-robot
 RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
 
+RUN conda install -y nbgitpuller
+
 USER $NB_USER
