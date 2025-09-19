@@ -10,6 +10,7 @@ RUN conda install -y \
     pytest \
     morfessor \
     nbgrader \
+    nltk \
     scikit-learn
 
 # FIXME - Install unlreased deprecated dev version of karel-robot
