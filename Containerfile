@@ -1,4 +1,4 @@
-FROM ucsb/jupyter-base:latest
+FROM ucsb/scipy-base:latest
 
 MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
@@ -6,7 +6,6 @@ USER root
 
 RUN conda install -y \
     beautifulsoup4 \
-    gensim \
     ptable \
     pytest \
     morfessor \
@@ -17,6 +16,6 @@ RUN conda install -y \
 RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
 
 # Pinapple isn't in Conda. 
-RUN pip install pynlpl
+RUN pip install pynlpl gensim
 
 USER $NB_USER
