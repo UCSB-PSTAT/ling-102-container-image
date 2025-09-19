@@ -1,4 +1,4 @@
-FROM ucsb/scipy-base:latest
+FROM ucsb/jupyter-base:latest
 
 MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
@@ -9,13 +9,10 @@ RUN conda install -y \
     ptable \
     pytest \
     morfessor \
-    nbgitpuller \
+    nbgrader \
     scikit-learn
 
 # FIXME - Install unlreased deprecated dev version of karel-robot
 RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
-
-# Pinapple isn't in Conda. 
-RUN pip install pynlpl gensim
 
 USER $NB_USER
