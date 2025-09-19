@@ -40,7 +40,7 @@ pipeline {
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import sklearn"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import matplotlib"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import nltk"'
-                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import import morfessor"'
+                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import morfessor"'
                         sh 'podman run -d --name=$IMAGE_NAME --rm -p 8888:8888 localhost/$IMAGE_NAME start-notebook.sh --NotebookApp.token="jenkinstest"'
                         sh 'sleep 10 && curl -v http://localhost:8888/lab?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
                         sh 'curl -v http://localhost:8888/tree?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
