@@ -16,7 +16,8 @@ RUN mamba install -y -c conda-forge\
     nltk\
     rich\
     scikit-learn &&\
-    mamba run pip install python-lsp-server[pyflakes]
-
+    mamba run pip install python-lsp-server[pyflakes] &&\
+    conda clean -afy &&\
+    /usr/local/bin/fix-permissions "${CONDA_DIR}" || true
 
 USER $NB_USER
