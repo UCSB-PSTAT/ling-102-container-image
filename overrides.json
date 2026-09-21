@@ -1,0 +1,104 @@
+{
+  "@jupyterlab/notebook-extension:tracker": {
+    "enableKernelInitNotification": false,
+    "codeCellConfig": {
+      "lineNumbers": true
+    },
+    "defaultCell": "code",
+    "autoStartDefaultKernel": false,
+    "showInputPlaceholder": true,
+    "inputHistoryScope": "global",
+    "kernelShutdown": false,
+    "markdownCellConfig": {
+      "lineNumbers": false,
+      "matchBrackets": false
+    },
+    "autoRenderMarkdownCells": false,
+    "rawCellConfig": {
+      "lineNumbers": false,
+      "matchBrackets": false
+    },
+    "scrollPastEnd": true,
+    "recordTiming": false,
+    "overscanCount": 1,
+    "maxNumberOutputs": 50,
+    "scrollHeadingToTop": true,
+    "showEditorForReadOnlyMarkdown": true,
+    "kernelStatus": {
+      "showOnStatusBar": false,
+      "showProgress": true,
+      "showJumpToRecentExecutionButton": false
+    },
+    "documentWideUndoRedo": false,
+    "showHiddenCellsButton": true,
+    "renderingLayout": "default",
+    "sideBySideLeftMarginOverride": "10px",
+    "sideBySideRightMarginOverride": "10px",
+    "sideBySideOutputRatio": 1,
+    "windowingMode": "contentVisibility",
+    "accessKernelHistory": false,
+    "addExtraLineOnCellMerge": true,
+    "showMinimap": false,
+    "useSystemClipboardForCells": false
+  },
+  "@jupyterlab/apputils-extension:notification": {
+    "checkForUpdates": false,
+    "doNotDisturbMode": false,
+    "fetchNews": "false"
+  },
+  "@jupyterlab/docmanager-extension:plugin": {
+    "autosave": true,
+    "autosaveInterval": 10,
+    "confirmClosingDocument": false,
+    "lastModifiedCheckMargin": 500,
+    "defaultViewers": {},
+    "renameUntitledFileOnSave": true,
+    "maxNumberRecents": 10
+  },
+  "@jupyterlab/console-extension:tracker": {
+    "clearCellsOnExecute": false,
+    "clearCodeContentOnExecute": true,
+    "hideCodeInput": false,
+    "interactionMode": "terminal",
+    "showAllKernelActivity": false,
+    "promptCellConfig": {
+      "codeFolding": false,
+      "lineNumbers": false
+    },
+    "promptCellPosition": "bottom",
+    "toolbar": [
+      {
+        "name": "run",
+        "command": "console:run-forced",
+        "rank": 0
+      },
+      {
+        "name": "restart",
+        "command": "console:restart-kernel",
+        "rank": 10
+      },
+      {
+        "name": "clear",
+        "command": "console:clear",
+        "rank": 20
+      },
+      {
+        "name": "spacer",
+        "type": "spacer",
+        "rank": 100
+      },
+      {
+        "name": "kernelName",
+        "rank": 1000
+      },
+      {
+        "name": "kernelStatus",
+        "rank": 1010
+      },
+      {
+        "name": "promptPosition",
+        "rank": 1020
+      }
+    ]
+  }
+}
