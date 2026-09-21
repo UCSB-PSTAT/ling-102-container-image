@@ -13,7 +13,4 @@ RUN conda install -y \
     nltk \
     scikit-learn
 
-# FIXME - Install unlreased deprecated dev version of karel-robot
-RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
-
 USER $NB_USER
