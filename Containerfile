@@ -13,6 +13,7 @@ RUN mamba install -y -c conda-forge\
     jupytext\
     ptable\
     pytest\
+    pytest-timeout\
     morfessor\
     nbgrader\
     nltk\
