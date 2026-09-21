@@ -4,16 +4,20 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-RUN conda install -y \
-    beautifulsoup4 \
-    ptable \
-    pytest \
-    morfessor \
-    nbgrader \
-    nltk \
-    scikit-learn
-
-# FIXME - Install unlreased deprecated dev version of karel-robot
-RUN pip install -i https://test.pypi.org/simple/ karel-robot==0.0.2
+RUN mamba install -y -c conda-forge\
+    beautifulsoup4\
+    jupyter-archive\
+    jupyterlab-lsp\
+    jupytext\
+    ptable\
+    pytest\
+    morfessor\
+    nbgrader\
+    nltk\
+    rich\
+    scikit-learn &&\
+    mamba run pip install python-lsp-server[pyflakes] &&\
+    conda clean -afy &&\
+    /usr/local/bin/fix-permissions "${CONDA_DIR}" || true
 
 USER $NB_USER
