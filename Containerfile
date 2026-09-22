@@ -15,7 +15,6 @@ RUN mamba install -y -c conda-forge\
     pytest\
     pytest-timeout\
     morfessor\
-    nbgrader\
     nltk\
     rich\
     scikit-learn &&\
