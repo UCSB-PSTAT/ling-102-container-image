@@ -41,6 +41,7 @@ pipeline {
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import numpy"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import pandas"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import pytest"'
+                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import pytest_timeout"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import requests"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import rich"'
                         sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import sklearn"'
